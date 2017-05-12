@@ -41,7 +41,6 @@ public class HttpMethods
                         chain -> {
                             Request request = chain.request().newBuilder()
                                     .addHeader("Authorization", authorization)
-                                    
                                     .build();
                             okhttp3.Response response = chain.proceed(request);
                             System.out.println(response.toString());
