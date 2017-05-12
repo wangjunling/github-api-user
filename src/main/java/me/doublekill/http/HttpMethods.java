@@ -22,6 +22,8 @@ public class HttpMethods
 
     private int DEFAULT_PAGE_SIZE = 30;
 
+    private String authorization = "xxx";//身份基本认证：username:password形式拼接的字符串用base64编码，然后在前面加上Basic空格 .查看BaseAuthUtil
+
     private Retrofit retrofit;
 
     private GithubService githubService;
@@ -38,8 +40,8 @@ public class HttpMethods
                 .addInterceptor(
                         chain -> {
                             Request request = chain.request().newBuilder()
-                                    .addHeader("Authorization", "xxxxxxxxxxxxxxxxx")
-                                    //身份基本认证：username:password形式拼接的字符串用base64编码，然后在前面加上Basic空格 .查看BaseAuthUtil
+                                    .addHeader("Authorization", authorization)
+                                    
                                     .build();
                             okhttp3.Response response = chain.proceed(request);
                             System.out.println(response.toString());
