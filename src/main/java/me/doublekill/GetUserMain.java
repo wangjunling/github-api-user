@@ -20,7 +20,7 @@ public class GetUserMain
 
     public static void main(String[] args)
     {
-        ex(Arrays.asList("tj"));
+        ex(Arrays.asList("torvalds"));
     }
 
     public static void ex(List<String> users)
